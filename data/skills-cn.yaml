@@ -1,0 +1,7 @@
+languages:
+  - C/C++
+  - Java
+  - Python
+technologies:
+  - Hadoop
+  - Apache Flink

@@ -1,0 +1,16 @@
+company: Datera, Inc
+dates: 2016/09 - 2018/02
+product: ""
+team: Scale-out Block Storage Cluster, Data Plane
+location: Sunnyvale, CA
+bullets:
+  - >
+    Participated development of data IO on top of
+    Linux B-cache and Linux iSCSI.
+    Maintained cluster-wise data operations such as
+    consistency check and replica repair,
+    storage load balancing among different storage nodes, etc.
+  - >
+    Helped in design and initial implementation of various features
+    including encryption, de-duplication,
+    and remote backup on AWS.

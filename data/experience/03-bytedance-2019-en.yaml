@@ -1,0 +1,25 @@
+company: ByteDance
+dates: 2019/08 - 2020/07
+product: ""
+team: Web-Scale Search, Online Info Retrieval
+location: Beijing
+bullets:
+  - >
+    Maintained online services, including retrieval,
+    fanout management, rank, request control.
+    Improved dependency management for downstream services
+    via unified registration, access and monitoring.
+    Reduced search latency via mutiple tiers of caches.
+    Improved content safety control quality by deploying
+    streaming update on search indices.
+  - >
+    Restructured metadata storage in Xapian (search index library)
+    by aggregating attributes into one protobuf structure,
+    thus reducing number of metadata lookups during search
+    retrieval phase, improved retrieval latency by roughly 10 percent.
+  - >
+    Responsible for architecture migration for Elastic Search
+    to C++/Xapian/Hadoop based inhouse search infrastructure
+    for various vertical channels.
+    Lead initial efferts in designing strategies to enable
+    inhouse search platform to support large number of small indices.

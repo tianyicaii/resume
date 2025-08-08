@@ -1,0 +1,2 @@
+# Python dependencies for Resume LaTeX Project
+PyYAML>=6.0

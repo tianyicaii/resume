@@ -1,0 +1,30 @@
+company: ByteDance
+dates: 2021/10 - 2023/06
+product: ""
+team: Douyin Recommandation Data Pipeline
+location: Beijing
+bullets:
+  - >
+    Maintained Douyin nearline data streams for video index
+    and candidate databases.
+    Enabled RocksDB based KV store to do column based updates
+    and row based reads.
+    Improved telemetry under multi-tenancy scenarios on the pipeline,
+    avoiding particular user to overwhelm shared data buses.
+  - >
+    Optimized Douyin and TikTok video database storage by
+    normalizing one monolithic table into video index and user index,
+    improving user info consistency and cache efficacy,
+    and simplifying user info lookup.
+  - >
+    Independently proposed, designed and implemented a Python
+    light-weight streaming processing engine,
+    and successfully deployed for vertical channels in Douyin
+    such as local retail.
+    Main features includes an epoll based event-driven loop
+    for high throughput data transfer between Python processes,
+    a multi-tier health monitoring and failure recovery mechanism
+    on top of Kubernetes,
+    seamless backward compatibility to minimize migration costs.
+    By decoupling between vertical channels and Douyin main feed,
+    they enjoy fast iteration and high reliability at the same time.

@@ -1,0 +1,19 @@
+company: High-Flyer Quant
+dates: 2021/03 - 2021/08
+product: ""
+team: AI Infra (Firefly Super Cluster), Storage and Network
+location: Hangzhou
+bullets:
+  - >
+    Participated development of BeeGFS based parallel file system,
+    improving write throughput by using Linux Asyc IO.
+    Developed automated end-to-end testing on GitLab.
+    Developed performance tests with visualization based on
+    InfluxDB and Grafana.
+  - >
+    Designed and implemented asynchronous network library
+    on RDMA networks.
+    The library provides Boost ASIO like interface,
+    event-driven communication pattern based on epoll.
+    Both native Linux and Windows versions are provided,
+    to support Windows apps for fast access to Linux storage cluster.

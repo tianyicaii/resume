@@ -1,0 +1,13 @@
+company: 摩尔线程
+dates: 2025/02 - 现在
+product: ""
+team: 大模型训练平台开发
+location: 北京
+bullets:
+  - >
+    学习基于 Kubernetes, DL-Rover 和 Megatron-LM 的大语言模型训练框架的运行机制。
+  - >
+    参与开发基于分布式内存和 RDMA 通讯的 checkpoint 存储系统，
+    提升单节点训练恢复速度。
+  - >
+    了解 DeepSeek, Llama 等当前先进大模型的简要技术原理和产品功能。

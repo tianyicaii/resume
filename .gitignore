@@ -1,1 +1,40 @@
+# System files
 .DS_Store
+Thumbs.db
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# LaTeX build artifacts
+*.dvi
+*.xdv
+*-converted-to.*
+
+# PDF output (except in output folder)
+*.pdf
+!output/*.pdf
+
+# Editor backup files
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+
+# Test files
+test-*.tex
+test-*.pdf

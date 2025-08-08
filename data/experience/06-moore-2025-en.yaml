@@ -1,0 +1,15 @@
+company: Moore Threads
+dates: 2025/02 - Present
+product: ""
+team: LLM Training Platform Development
+location: Beijing
+bullets:
+  - >
+    Learning the operational mechanisms of large language model training frameworks
+    based on Kubernetes, DL-Rover and Megatron-LM.
+  - >
+    Participating in developing a checkpoint storage system based on distributed memory
+    and RDMA communication to improve single-node training recovery speed.
+  - >
+    Understanding the technical principles and product features of current advanced
+    large models such as DeepSeek and Llama.

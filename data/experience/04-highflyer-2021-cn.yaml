@@ -1,0 +1,15 @@
+company: 幻方量化
+dates: 2021/03 - 2021/08
+product: ""
+team: 机器学习训练平台（萤火集群）存储和网络开发
+location: 杭州
+bullets:
+  - >
+    参与开发并行文件系统，对 BeeGFS 进行基于 Linux Async IO 异步写入的改造。
+    开发自动化集成测试环境，基于 GitLab 在虚拟机自动部署和测试，
+    并基于 InfluxDB, Grafana 实现测试结果的可视化。
+  - >
+    设计并开发了 InfiniBand 网络下基于 RDMA 协议的异步网络通讯库。
+    设计采用了类似于 Boost Asio 通讯库的 API，
+    基于 epoll 实现异步通讯，并且分别开发了 Linux 和 Windows 的原生版本，
+    以支持 Windows 业务应用对 Linux 存储集群的高效访问。
