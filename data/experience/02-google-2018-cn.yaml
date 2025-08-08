@@ -1,18 +1,18 @@
 company: Google
 dates: 2018/03 - 2019/06
-product: ""
-team: Google Cloud 微服务治理产品， HTTP 层全球负载均衡
+product: Google Cloud 微服务治理
+team: 全球软件负载均衡（GSLB）
 location: Sunnyvale, CA
 bullets:
   - >
-    参与 GCP Traffic Director (托管的 Istio Pilot) 产品开发，
-    作为控制层 API 接口对数据层的 Envoy proxy 提供 service mesh 相关的配置信息，
-    以提供包括服务发现、负载均衡、安全验证等功能。
-    设计并开发了 Envoy 配置信息缓存、地点信息上报、Ingress 安全配置等核心功能组件。
+    参与开发 GCP Traffic Director（托管式 Istio Pilot）产品。
+    该产品作为控制层向数据平面的 Envoy 代理提供服务网格配置，
+    实现服务发现、负载均衡和安全认证等核心功能。
   - >
-    设计 Envoy proxy 在不同环境中的部署启动方案，
-    环境包括 VM、GKE、原生 Kubernetes，以及它们分别在 GCP 和本地机房中的部署。
+    设计并开发 Envoy 配置缓存、位置感知、Ingress 安全配置等核心组件。
   - >
-    设计开发基于 Python 的集成测试框架，
-    根据配置信息自动调用 Cloud API 生成相应测试环境，
-    极大的简化了测试流程，提升了迭代效率。
+    设计 Envoy 代理在不同环境下的启动链接方式，涵盖 VM、GKE、
+    原生 Kubernetes，设计 Envoy GCP 和客户数据中心的部署方案。
+  - >
+    开发基于 Python 的集成测试框架，通过读取配置自动调用 GCP API
+    构建测试环境，大幅减少手工操作，提升产品迭代效率。

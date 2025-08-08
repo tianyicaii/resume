@@ -8,9 +8,11 @@
 
 \usepackage{ebgaramond}
 \usepackage[UTF8]{ctex}
+\usepackage{fontawesome}
+\usepackage{xcolor}
 
 \name{Tianyi Cai}
-\address{Phone (Wechat): (+86) 18031521995 {} {} {} {} E-mail: tianyicai@vip.126.com}
+\address{{\color{gray}\faPhone\ \faWeixin}\ \ (+86) 18031521995 {} {} {} {} {\color{gray}\faEnvelope}\ \ tianyicai@vip.126.com}
 
 \begin{document}
 
@@ -26,48 +28,62 @@
 
 \begin{rSection}{Experience}
 
-    \begin{rSubsection}{Moore Threads}{2025/02 - Present}{LLM Training Platform Development}{Beijing}
-        \item Learning the operational mechanisms of large language model training frameworks based on Kubernetes, DL-Rover and Megatron-LM.
+    \begin{rSubsection}{Cobo}{2025/06 - 2025/08}{MCP-Now, LLM Application Development}{Beijing}
+        \item Developed MCP-Now backend infrastructure, implementing PostgreSQL database access via Supabase Edge Functions. Built first version of user account system with secure authentication, registration workflows, and content sharing management. Established CI/CD pipeline using GitHub Actions and Supabase branch integration for automated testing and deployment.
 
-        \item Participating in developing a checkpoint storage system based on distributed memory and RDMA communication to improve single-node training recovery speed.
-
-        \item Understanding the technical principles and product features of current advanced large models such as DeepSeek and Llama.
+        \item Leveraged AI development tools (Claude Code, Cursor) to enhance development efficiency and code quality.
     \end{rSubsection}
 
-    \begin{rSubsection}{ByteDance}{2021/10 - 2023/06}{Douyin Recommandation Data Pipeline}{Beijing}
-        \item Maintained Douyin nearline data streams for video index and candidate databases. Enabled RocksDB based KV store to do column based updates and row based reads. Improved telemetry under multi-tenancy scenarios on the pipeline, avoiding particular user to overwhelm shared data buses.
+    \begin{rSubsection}{Moore Threads}{2025/02 - 2025/05}{LLM Training Platform, GPU Ecosystem}{Beijing}
+        \item Developed LLM training platform integrating Kubernetes, DL-Rover, and Megatron-LM, providing one-click deployment, automated scaling, and real-time monitoring for large model training workflows.
 
-        \item Optimized Douyin and TikTok video database storage by normalizing one monolithic table into video index and user index, improving user info consistency and cache efficacy, and simplifying user info lookup.
-
-        \item Independently proposed, designed and implemented a Python light-weight streaming processing engine, and successfully deployed for vertical channels in Douyin such as local retail. Main features includes an \textit{epoll} based event-driven loop for high throughput data transfer between Python processes, a multi-tier health monitoring and failure recovery mechanism on top of Kubernetes, seamless backward compatibility to minimize migration costs. By decoupling between vertical channels and Douyin main feed, they enjoy fast iteration and high reliability at the same time.
+        \item Developed high-performance distributed memory system leveraging shared memory, RDMA, and RoCE networking to provide checkpoint caching across training nodes, reducing recovery time from node failures.
     \end{rSubsection}
 
-    \begin{rSubsection}{High-Flyer Quant}{2021/03 - 2021/08}{AI Infra (Firefly Super Cluster), Storage and Network}{Hangzhou}
-        \item Participated development of BeeGFS based parallel file system, improving write throughput by using Linux Asyc IO. Developed automated end-to-end testing on GitLab. Developed performance tests with visualization based on InfluxDB and Grafana.
+    \begin{rSubsection}{ByteDance}{2021/10 - 2023/06}{Douyin Recommendation, Data Pipeline}{Beijing}
+        \item Developed and maintained Douyin's nearline data streams, video indices, and candidate databases. Developed RocksDB-based KV storage indexing module supporting column-based updates and row-based reads.
 
-        \item Designed and implemented asynchronous network library on RDMA networks. The library provides Boost ASIO like interface, event-driven communication pattern based on \textit{epoll}. Both native Linux and Windows versions are provided, to support Windows apps for fast access to Linux storage cluster.
+        \item Implemented comprehensive resource monitoring and governance mechanisms for multi-tenant scenarios, preventing individual services from overloading the main recommendation data pipeline and avoiding excessive index storage consumption.
+
+        \item Improved Douyin and TikTok video database architecture by splitting monolithic index into separate video and user indices. Improved online cache hit rates and enhanced user information consistency while simplifying social feature data access.
+
+        \item Independently designed and implemented a lightweight Python-based stream processing engine, successfully deployed for Douyin vertical channels including group buying. Core capabilities: \textit{epoll}-based event-driven architecture for high-throughput IPC; Kubernetes-native health monitoring and automated failure recovery; full backward compatibility while facilitating business development iteration. Achieved faster feature iteration and reliability by completely decoupling vertical businesses from the main recommendation feed.
     \end{rSubsection}
 
-    \begin{rSubsection}{ByteDance}{2019/08 - 2020/07}{Web-Scale Search, Online Info Retrieval}{Beijing}
-        \item Maintained online services, including retrieval, fanout management, rank, request control. Improved dependency management for downstream services via unified registration, access and monitoring. Reduced search latency via mutiple tiers of caches. Improved content safety control quality by deploying streaming update on search indices.
+    \begin{rSubsection}{High-Flyer Quant}{2021/03 - 2021/08}{AI Training Platform (Firefly Super Cluster), Storage and Network}{Hangzhou}
+        \item Developed BeeGFS-based parallel file system with optimized asynchronous write performance via Linux Async I/O to improve read/write throughput. Built automated testing environment using GitLab CI/CD for VM auto-deployment and end-to-end testing, with performance visualization through InfluxDB and Grafana.
 
-        \item Restructured metadata storage in Xapian (search index library) by aggregating attributes into one protobuf structure, thus reducing number of metadata lookups during search retrieval phase, improved retrieval latency by roughly 10 percent.
-
-        \item Responsible for architecture migration for Elastic Search to C++/Xapian/Hadoop based inhouse search infrastructure for various vertical channels. Lead initial efferts in designing strategies to enable inhouse search platform to support large number of small indices.
+        \item Architected and implemented high-performance asynchronous communication library for RDMA over InfiniBand. Provided Boost.Asio-compatible API with event-driven architecture based on \textit{epoll} for optimal performance. Developed cross-platform Linux and Windows native versions, enabling seamless integration between Windows applications and Linux storage clusters.
     \end{rSubsection}
 
-    \begin{rSubsection}{Google}{2018/03 - 2019/06}{GCP Service Mesh, Global Software Load Balancing}{Sunnyvale, CA}
-        \item Participated development of GCP Traffic Director product (Google managed Istio, now under the name GCP service-mesh management, acting as control plane to provide service-mesh related configs to Envoy proxies on data plane.) Implemented features including Envoy config cache, Envoy location awareness, Ingress authentication and authorizaiton configurations, etc.
+    \begin{rSubsection}{ByteDance}{2019/08 - 2020/07}{Web Search, Online Architecture}{Beijing}
+        \item Maintained and optimized Toutiao Search online services, providing web-scale search and internal search platform capabilities. Covered core modules including retrieval, fanout control, ranking, request control, and content safety.
 
-        \item Developed deployment strategy for Envoy in hybrid cloud scenario. Environments includes VM, Kubernetes, GKE, either in customers' datacenters or Google Cloud.
+        \item Managed downstream service dependencies through unified registration, access, and monitoring. Implemented multi-tier caching to optimize long-tail service responses, significantly reducing search latency.
 
-        \item Developed integration test framework, which reads simple yaml config and automatically creates test workflows by calling Google Cloud API, substantially accelerated product iterations.
+        \item Implemented streaming updates for sensitive content flagging, enabling early-stage risk content filtering during retrieval, improving search quality while ensuring content safety.
+
+        \item Restructured metadata storage in Xapian index library by aggregating document attributes into a single Protobuf structure, reducing metadata lookup operations during retrieval phase and decreasing retrieval latency by approximately 10\%.
+
+        \item Led architecture migration from Elasticsearch to in-house C++/Xapian/Hadoop infrastructure for multiple vertical search channels including user search and music search. Designed and implemented platform architecture supporting large numbers of heterogeneous small indices.
     \end{rSubsection}
 
-    \begin{rSubsection}{Datera, Inc}{2016/09 - 2018/02}{Scale-out Block Storage Cluster, Data Plane}{Sunnyvale, CA}
-        \item Participated development of data IO on top of Linux B-cache and Linux iSCSI. Maintained cluster-wise data operations such as consistency check and replica repair, storage load balancing among different storage nodes, etc.
+    \begin{rSubsection}{Google}{2018/03 - 2019/06}{Google Cloud Service Mesh, Global Software Load Balancing (GSLB)}{Sunnyvale, CA}
+        \item Participated in developing GCP Traffic Director product (managed Istio Pilot). Traffic Director serves as the control layer providing service mesh configurations to Envoy proxies on the data plane, enabling service discovery, load balancing, and authentication.
 
-        \item Helped in design and initial implementation of various features including encryption, de-duplication, and remote backup on AWS.
+        \item Designed and developed core components including Envoy configuration cache, location awareness, and Ingress security configurations.
+
+        \item Designed Envoy proxy bootstrap and linking methods across different environments including VMs, GKE, and native Kubernetes. Designed Envoy deployment solutions for both GCP and customer datacenters.
+
+        \item Developed a Python-based integration test framework that automatically creates test environments by calling Google Cloud APIs based on configuration, significantly reducing manual operations and improving iteration efficiency.
+    \end{rSubsection}
+
+    \begin{rSubsection}{Datera, Inc}{2016/09 - 2018/02}{Distributed Block Storage, Data Plane}{Sunnyvale, CA}
+        \item Participated in developing a distributed block storage system based on Linux B-Cache and iSCSI protocol, providing multi-replica read/write for storage volumes with support for automatic horizontal scaling and SSD/HDD hybrid configurations.
+
+        \item Maintained core data plane functionality including inter-replica consistency check and repair, storage load balancing across different storage nodes.
+
+        \item Contributed to the design of various product features including data encryption, deduplication across volumes, and remote backup from local datacenter to AWS.
     \end{rSubsection}
 
 \end{rSection}
@@ -75,10 +91,18 @@
 \begin{rSection}{Technical Strengths}
 
     \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-        Programming Languages & C/C++, Java, Python \\
-        Big Data \& Distributed Systems & Hadoop, Apache Flink \\
+        Programming Languages & C/C++, Python, Java \\
+        Systems & Distributed Storage, Stream Processing, Service Mesh, LLM Training \\
+        Databases & RocksDB, PostgreSQL, Key-Value Stores \\
+        Infrastructure & Kubernetes, RDMA/InfiniBand, Linux Kernel, CI/CD \\
     \end{tabular}
 
 \end{rSection}
+
+\vfill
+\begin{center}
+    \footnotesize\textit{Generated with the help from Claude. \\
+    source code: https://github.com/tianyicaii/resume}
+\end{center}
 
 \end{document}

@@ -1,16 +1,19 @@
 company: Datera, Inc
 dates: 2016/09 - 2018/02
-product: ""
-team: Scale-out Block Storage Cluster, Data Plane
+product: Distributed Block Storage
+team: Data Plane
 location: Sunnyvale, CA
 bullets:
   - >
-    Participated development of data IO on top of
-    Linux B-cache and Linux iSCSI.
-    Maintained cluster-wise data operations such as
-    consistency check and replica repair,
-    storage load balancing among different storage nodes, etc.
+    Participated in developing a distributed block storage system based on
+    Linux B-Cache and iSCSI protocol, providing multi-replica read/write for
+    storage volumes with support for automatic horizontal scaling and
+    SSD/HDD hybrid configurations.
   - >
-    Helped in design and initial implementation of various features
-    including encryption, de-duplication,
-    and remote backup on AWS.
+    Maintained core data plane functionality including inter-replica
+    consistency check and repair, storage load balancing across different
+    storage nodes.
+  - >
+    Contributed to the design of various product features including data
+    encryption, deduplication across volumes, and remote backup from local
+    datacenter to AWS.

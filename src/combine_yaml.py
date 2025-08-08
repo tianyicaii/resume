@@ -43,6 +43,12 @@ def combine_yaml_files(data_dir, lang='en'):
         combined['skills'] = load_yaml_file(skills_file)
         print(f"  ✓ Loaded skills ({lang})")
     
+    # Load credit/acknowledgement
+    credit_file = data_dir / f'credit{suffix}.yaml'
+    if credit_file.exists():
+        combined['credit'] = load_yaml_file(credit_file)
+        print(f"  ✓ Loaded credit ({lang})")
+    
     return combined
 
 def save_combined_yaml(data, output_file):

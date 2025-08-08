@@ -178,17 +178,3 @@ echo -e "   English: ${BLUE}$OUTPUT_DIR/resume-en.pdf${NC}"
 echo -e "   Chinese: ${BLUE}$OUTPUT_DIR/resume-cn.pdf${NC}"
 echo ""
 
-# Optional: Open PDF
-if command -v xdg-open &> /dev/null; then
-    read -p "Open English PDF? (y/n) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        xdg-open "$OUTPUT_DIR/resume-en.pdf"
-    fi
-elif command -v open &> /dev/null; then
-    read -p "Open English PDF? (y/n) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        open "$OUTPUT_DIR/resume-en.pdf"
-    fi
-fi

@@ -1,25 +1,30 @@
 company: ByteDance
 dates: 2019/08 - 2020/07
-product: ""
-team: Web-Scale Search, Online Info Retrieval
+product: Web Search
+team: Online Architecture
 location: Beijing
 bullets:
   - >
-    Maintained online services, including retrieval,
-    fanout management, rank, request control.
-    Improved dependency management for downstream services
-    via unified registration, access and monitoring.
-    Reduced search latency via mutiple tiers of caches.
-    Improved content safety control quality by deploying
-    streaming update on search indices.
+    Maintained and optimized Toutiao Search online services, providing
+    web-scale search and internal search platform capabilities. Covered core
+    modules including retrieval, fanout control, ranking, request control,
+    and content safety.
   - >
-    Restructured metadata storage in Xapian (search index library)
-    by aggregating attributes into one protobuf structure,
-    thus reducing number of metadata lookups during search
-    retrieval phase, improved retrieval latency by roughly 10 percent.
+    Managed downstream service dependencies through unified registration,
+    access, and monitoring. Implemented multi-tier caching to optimize
+    long-tail service responses, significantly reducing search latency.
   - >
-    Responsible for architecture migration for Elastic Search
-    to C++/Xapian/Hadoop based inhouse search infrastructure
-    for various vertical channels.
-    Lead initial efferts in designing strategies to enable
-    inhouse search platform to support large number of small indices.
+    Implemented streaming updates for sensitive content flagging, enabling
+    early-stage risk content filtering during retrieval, improving search
+    quality while ensuring content safety.
+  - >
+    Restructured metadata storage in Xapian index library by aggregating
+    document attributes into a single Protobuf structure, reducing metadata
+    lookup operations during retrieval phase and decreasing retrieval
+    latency by approximately 10\%.
+  - >
+    Led architecture migration from Elasticsearch to in-house
+    C++/Xapian/Hadoop infrastructure for multiple vertical search channels
+    including user search and music search. Designed and implemented
+    platform architecture supporting large numbers of heterogeneous small
+    indices.

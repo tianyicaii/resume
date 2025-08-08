@@ -45,9 +45,11 @@ def generate_latex_header(data, lang='en'):
 
 \\usepackage{{ebgaramond}}
 \\usepackage[UTF8]{{ctex}}
+\\usepackage{{fontawesome}}
+\\usepackage{{xcolor}}
 
-\\name{{{data['personal']['name']}}}
-\\address{{ \\kaishu 电话（微信）： {data['personal']['phone']} {{}} {{}} {{}} {{}} 邮箱： {data['personal']['email']} }}
+\\name{{\\heiti {data['personal']['name']}}}
+\\address{{ \\kaishu {{\\color{{gray}}\\faPhone\\ \\faWeixin}}\\ \\ {data['personal']['phone']} {{}} {{}} {{}} {{}} {{\\color{{gray}}\\faEnvelope}}\\ \\ {data['personal']['email']} }}
 
 \\begin{{document}}
 """
@@ -63,9 +65,11 @@ def generate_latex_header(data, lang='en'):
 
 \\usepackage{{ebgaramond}}
 \\usepackage[UTF8]{{ctex}}
+\\usepackage{{fontawesome}}
+\\usepackage{{xcolor}}
 
 \\name{{{data['personal']['name']}}}
-\\address{{Phone (Wechat): {data['personal']['phone']} {{}} {{}} {{}} {{}} E-mail: {data['personal']['email']}}}
+\\address{{{{\\color{{gray}}\\faPhone\\ \\faWeixin}}\\ \\ {data['personal']['phone']} {{}} {{}} {{}} {{}} {{\\color{{gray}}\\faEnvelope}}\\ \\ {data['personal']['email']}}}
 
 \\begin{{document}}
 """
@@ -79,15 +83,24 @@ def generate_education_section(education_list, lang='en'):
     latex = f"\n\\begin{{rSection}}{{{section_title}}}\n"
     
     for edu in education_list:
+        # Combine degree and major if both exist
+        if 'major' in edu:
+            if lang == 'cn':
+                degree_text = f"{edu['degree']}，{edu['major']}"
+            else:
+                degree_text = f"{edu['degree']} in {edu['major']}"
+        else:
+            degree_text = edu['degree']
+        
         if lang == 'cn':
             latex += f"""    
     \\textbf{{{edu['school']}}} \\hfill \\textit{{{edu['dates']}}} \\\\ 
-    {{\\kaishu {edu['degree']}，GPA: {edu['gpa']} }} \\hfill \\textit{{{edu['location']}}}
+    {{\\kaishu {degree_text}，GPA: {edu['gpa']} }} \\hfill \\textit{{{edu['location']}}}
 """
         else:
             latex += f"""    
     \\textbf{{{edu['school']}}} \\hfill \\textit{{{edu['dates']}}} \\\\ 
-    {{{edu['degree']}, GPA: {edu['gpa']}}} \\hfill \\textit{{{edu['location']}}}
+    {{{degree_text}, GPA: {edu['gpa']}}} \\hfill \\textit{{{edu['location']}}}
 """
     
     latex += "\n\\end{rSection}\n"
@@ -104,7 +117,7 @@ def generate_experience_section(experience_list, lang='en'):
     for exp in experience_list:
         # Use 'product' and 'team' if available
         if 'product' in exp and 'team' in exp:
-            title = f"{exp['team']}, {exp['product']}" if exp['product'] else exp['team']
+            title = f"{exp['product']}, {exp['team']}" if exp['product'] else exp['team']
         else:
             title = exp.get('team', '')
         
@@ -132,14 +145,49 @@ def generate_skills_section(skills, lang='en'):
     
     if 'languages' in skills:
         lang_label = "编程语言" if lang == 'cn' else "Programming Languages"
-        latex += f"        {lang_label} & {', '.join(skills['languages'])} \\\\\n"
+        latex += f"        {lang_label} & {skills['languages'][0] if isinstance(skills['languages'], list) and len(skills['languages']) == 1 else ', '.join(skills['languages'])} \\\\\n"
+    
+    if 'systems' in skills:
+        sys_label = "系统架构" if lang == 'cn' else "Systems"
+        latex += f"        {sys_label} & {skills['systems'][0] if isinstance(skills['systems'], list) and len(skills['systems']) == 1 else ', '.join(skills['systems'])} \\\\\n"
+    
+    if 'databases' in skills:
+        db_label = "数据库" if lang == 'cn' else "Databases"
+        latex += f"        {db_label} & {skills['databases'][0] if isinstance(skills['databases'], list) and len(skills['databases']) == 1 else ', '.join(skills['databases'])} \\\\\n"
+    
+    if 'infrastructure' in skills:
+        infra_label = "基础设施" if lang == 'cn' else "Infrastructure"
+        latex += f"        {infra_label} & {skills['infrastructure'][0] if isinstance(skills['infrastructure'], list) and len(skills['infrastructure']) == 1 else ', '.join(skills['infrastructure'])} \\\\\n"
     
     if 'technologies' in skills:
         tech_label = "大数据 \\& 分布式系统" if lang == 'cn' else "Big Data \\& Distributed Systems"
-        latex += f"        {tech_label} & {', '.join(skills['technologies'])} \\\\\n"
+        latex += f"        {tech_label} & {skills['technologies'][0] if isinstance(skills['technologies'], list) and len(skills['technologies']) == 1 else ', '.join(skills['technologies'])} \\\\\n"
     
     latex += "    \\end{tabular}\n\n"
     latex += "\\end{rSection}\n"
+    return latex
+
+def generate_credit_section(credit, lang='en'):
+    """Generate credit/acknowledgement section"""
+    if not credit or 'acknowlegement' not in credit:
+        return ""
+    
+    latex = "\n\\vfill\n"  # Push to bottom of page
+    latex += "\\begin{center}\n"
+    latex += "    \\footnotesize\\textit{"
+    
+    # Process each line separately
+    lines = []
+    for line in credit['acknowlegement']:
+        # Escape special LaTeX characters in URLs
+        escaped_line = line.strip().replace('_', '\\_')
+        lines.append(escaped_line)
+    
+    # Join with line breaks
+    latex += ' \\\\\n    '.join(lines)
+    
+    latex += "}\n"
+    latex += "\\end{center}\n"
     return latex
 
 def generate_latex(data, lang='en'):
@@ -148,6 +196,7 @@ def generate_latex(data, lang='en'):
     latex += generate_education_section(data.get('education', []), lang)
     latex += generate_experience_section(data.get('experience', []), lang)
     latex += generate_skills_section(data.get('skills', {}), lang)
+    latex += generate_credit_section(data.get('credit', {}), lang)
     latex += "\n\\end{document}\n"
     return latex
 

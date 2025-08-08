@@ -1,0 +1,13 @@
+company: Cobo
+dates: 2025/06 - 2025/08
+product: MCP-Now
+team: 大模型应用开发
+location: 北京
+bullets:
+  - >
+    负责开发 MCP-Now 后端基础架构，通过 Supabase Edge Functions 实现
+    PostgreSQL 数据库访问。构建第一版用户账户系统，包含安全认证、
+    注册流程和内容分享管理。使用 GitHub Actions 和 Supabase 分支集成功能
+    建立 CI/CD 流水线，实现自动化测试和部署。
+  - >
+    利用 AI 开发工具（Claude Code、Cursor），提升开发效率和代码质量。

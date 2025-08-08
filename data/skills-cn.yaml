@@ -1,7 +1,8 @@
 languages:
-  - C/C++
-  - Java
-  - Python
-technologies:
-  - Hadoop
-  - Apache Flink
+  - C/C++, Python, Java
+systems:
+  - 分布式存储, 流处理管道, 服务网格, 大模型训练
+databases:
+  - RocksDB, PostgreSQL, 键值存储
+infrastructure:
+  - Kubernetes, RDMA/InfiniBand, Linux 内核, CI/CD

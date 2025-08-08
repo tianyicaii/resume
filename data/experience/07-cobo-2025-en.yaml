@@ -1,0 +1,16 @@
+company: Cobo
+dates: 2025/06 - 2025/08
+product: MCP-Now
+team: LLM Application Development
+location: Beijing
+bullets:
+  - >
+    Developed MCP-Now backend infrastructure, implementing PostgreSQL
+    database access via Supabase Edge Functions. Built first version of user
+    account system with secure authentication, registration workflows, and
+    content sharing management. Established CI/CD pipeline using GitHub
+    Actions and Supabase branch integration for automated testing and
+    deployment.
+  - >
+    Leveraged AI development tools (Claude Code, Cursor) to enhance
+    development efficiency and code quality.

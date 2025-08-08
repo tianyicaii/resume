@@ -1,30 +1,29 @@
 company: ByteDance
 dates: 2021/10 - 2023/06
-product: ""
-team: Douyin Recommandation Data Pipeline
+product: Douyin Recommendation
+team: Data Pipeline
 location: Beijing
 bullets:
   - >
-    Maintained Douyin nearline data streams for video index
-    and candidate databases.
-    Enabled RocksDB based KV store to do column based updates
-    and row based reads.
-    Improved telemetry under multi-tenancy scenarios on the pipeline,
-    avoiding particular user to overwhelm shared data buses.
+    Developed and maintained Douyin's nearline data streams, video indices,
+    and candidate databases. Developed RocksDB-based KV storage indexing
+    module supporting column-based updates and row-based reads.
   - >
-    Optimized Douyin and TikTok video database storage by
-    normalizing one monolithic table into video index and user index,
-    improving user info consistency and cache efficacy,
-    and simplifying user info lookup.
+    Implemented comprehensive resource monitoring and governance mechanisms
+    for multi-tenant scenarios, preventing individual services from
+    overloading the main recommendation data pipeline and avoiding excessive
+    index storage consumption.
   - >
-    Independently proposed, designed and implemented a Python
-    light-weight streaming processing engine,
-    and successfully deployed for vertical channels in Douyin
-    such as local retail.
-    Main features includes an epoll based event-driven loop
-    for high throughput data transfer between Python processes,
-    a multi-tier health monitoring and failure recovery mechanism
-    on top of Kubernetes,
-    seamless backward compatibility to minimize migration costs.
-    By decoupling between vertical channels and Douyin main feed,
-    they enjoy fast iteration and high reliability at the same time.
+    Improved Douyin and TikTok video database architecture by splitting
+    monolithic index into separate video and user indices. Improved online
+    cache hit rates and enhanced user information consistency while
+    simplifying social feature data access.
+  - >
+    Independently designed and implemented a lightweight Python-based stream
+    processing engine, successfully deployed for Douyin vertical channels
+    including group buying. Core capabilities: epoll-based event-driven
+    architecture for high-throughput IPC; Kubernetes-native health
+    monitoring and automated failure recovery; full backward compatibility
+    while facilitating business development iteration. Achieved faster
+    feature iteration and reliability by completely decoupling vertical
+    businesses from the main recommendation feed.

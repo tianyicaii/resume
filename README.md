@@ -53,8 +53,11 @@ Install TeX Live (comprehensive LaTeX distribution):
 sudo apt-get update
 sudo apt-get install -y texlive-full
 
-# Alternative: Minimal installation
+# Alternative: Minimal installation with required packages
 sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended texlive-xetex
+
+# Additional packages for icons and better font support
+sudo apt-get install -y texlive-fonts-extra  # For fontawesome icons
 
 # Verify installation
 pdflatex --version
@@ -70,11 +73,18 @@ pip install -r requirements.txt
 pip install PyYAML
 ```
 
-### 3. VS Code Extensions (Optional)
+### 3. Chinese Font Support (Optional but Recommended)
+For better Chinese typography, install Noto CJK fonts:
+```bash
+# Install Noto CJK fonts for professional Chinese typography
+sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+```
+
+### 4. VS Code Extensions (Optional)
 - **LaTeX Workshop** - Main LaTeX extension for PDF compilation and preview
 - **LaTeX Utilities** - Additional LaTeX tools and snippets
 
-### 4. Optional Tools
+### 5. Optional Tools
 ```bash
 # Install latexmk for automatic compilation
 sudo apt-get install -y latexmk
@@ -227,6 +237,18 @@ Add to your VS Code settings.json for optimal configuration:
 }
 ```
 
+## Features
+
+### Visual Enhancements
+- **Icon Support**: Phone (📞), WeChat, and Email (✉️) icons using fontawesome
+- **Gray Icons**: Subtle gray coloring for contact icons
+- **Improved Spacing**: Better visual separation between icons and text
+- **Chinese Typography**: Optimized font selection with heiti (黑体) for names and kaishu (楷书) for contact info
+
+### Data Structure
+- **Separated Degree/Major**: Education entries now have separate `degree` and `major` fields that combine in output
+  - Example: `degree: B.S.` + `major: Computer Science` → "B.S. in Computer Science"
+
 ## Benefits
 
 - **Modular Data**: Edit individual experiences/education independently
@@ -235,7 +257,7 @@ Add to your VS Code settings.json for optimal configuration:
 - **Easy Updates**: Just edit YAML, no LaTeX knowledge needed
 - **Version Control Friendly**: Track changes per module
 - **Pipeline Architecture**: Each step is independent and testable
-- **Professional Output**: High-quality PDF resumes
+- **Professional Output**: High-quality PDF resumes with icons
 
 ## Tips
 

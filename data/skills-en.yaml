@@ -1,7 +1,8 @@
 languages:
-  - C/C++
-  - Java
-  - Python
-technologies:
-  - Hadoop
-  - Apache Flink
+  - C/C++, Python, Java
+systems:
+  - Distributed Storage, Stream Processing, Service Mesh, LLM Training
+databases:
+  - RocksDB, PostgreSQL, Key-Value Stores
+infrastructure:
+  - Kubernetes, RDMA/InfiniBand, Linux Kernel, CI/CD

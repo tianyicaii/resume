@@ -1,23 +1,23 @@
 company: Google
 dates: 2018/03 - 2019/06
-product: ""
-team: GCP Service Mesh, Global Software Load Balancing
+product: Google Cloud Service Mesh
+team: Global Software Load Balancing (GSLB)
 location: Sunnyvale, CA
 bullets:
   - >
-    Participated development of GCP Traffic Director product
-    (Google managed Istio, now under the name GCP service-mesh
-    management, acting as control plane to provide service-mesh
-    related configs to Envoy proxies on data plane.)
-    Implemented features including Envoy config cache,
-    Envoy location awareness, Ingress authentication
-    and authorizaiton configurations, etc.
+    Participated in developing GCP Traffic Director product (managed Istio
+    Pilot). Traffic Director serves as the control layer providing service
+    mesh configurations to Envoy proxies on the data plane, enabling service
+    discovery, load balancing, and authentication.
   - >
-    Developed deployment strategy for Envoy in hybrid cloud scenario.
-    Environments includes VM, Kubernetes, GKE,
-    either in customers' datacenters or Google Cloud.
+    Designed and developed core components including Envoy configuration
+    cache, location awareness, and Ingress security configurations.
   - >
-    Developed integration test framework, which reads simple
-    yaml config and automatically creates test workflows
-    by calling Google Cloud API,
-    substantially accelerated product iterations.
+    Designed Envoy proxy bootstrap and linking methods across different
+    environments including VMs, GKE, and native Kubernetes. Designed Envoy
+    deployment solutions for both GCP and customer datacenters.
+  - >
+    Developed a Python-based integration test framework that automatically
+    creates test environments by calling Google Cloud APIs based on
+    configuration, significantly reducing manual operations and improving
+    iteration efficiency.
